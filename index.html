@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Home work 4</title>
+        <style>
+            body {
+                max-width: 1200px;
+                margin: 0 auto;
+                background-color: #f3f3f3;
+            }
+            span {
+                background-color: rgb(193, 193, 193);
+            }
+            li > code {
+                line-height: 1.7;
+            }
+            code > ul {
+                list-style-type: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Домашнє завдання №4</h1>
+        <section>
+            <h2>Задача 1. Пакування товарів</h2>
+            <p>
+                Напиши функцію
+                <span>isEnoughCapacity(products, containerSize)</span>, яка
+                обчислює, чи помістяться всі товари в контейнер при пакуванні.
+            </p>
+
+            <p>Функція оголошує два параметри:</p>
+            <ul>
+                <li>
+                    <p>
+                        <span>products</span> — об’єкт, у якому ключі містять
+                        назви товарів, а їхні значення — кількість цих товарів.
+                        Наприклад, <span>{ apples: 2, grapes: 4 }</span>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <span>containerSize</span> — число, максимальна
+                        кількість одиниць товарів, яку в себе може вмістити
+                        контейнер.
+                    </p>
+                </li>
+            </ul>
+            <p>
+                Функція має повернути результат перевірки, чи помістяться всі
+                товари в контейнер. Тобто порахувати загальну кількість товарів
+                в об’єкті products і повернути true, якщо вона менше або
+                дорівнює containerSize, і false, якщо ні.
+            </p>
+
+            <p>
+                Візьми код нижче і встав після оголошення своєї функції для
+                перевірки коректності її роботи. У консоль будуть виведені
+                результати її викликів.
+            </p>
+
+            <ol>
+                <li>
+                    <code
+                        >console.log( isEnoughCapacity({ apples: 2, grapes: 3,
+                        carrots: 1 }, 8) ); // true</code
+                    >
+                </li>
+                <li>
+                    <code
+                        >console.log( isEnoughCapacity({ apples: 4, grapes: 6,
+                        lime: 16 }, 12) ); // false</code
+                    >
+                </li>
+                <li>
+                    <code
+                        >console.log( isEnoughCapacity({ apples: 1, lime: 5,
+                        tomatoes: 3 }, 14) ); // true</code
+                    >
+                </li>
+                <li>
+                    <code
+                        >console.log( isEnoughCapacity({ apples: 18, potatoes:
+                        5, oranges: 2 }, 7) ); // false</code
+                    >
+                </li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Задача 2. Розрахунок калорій</h2>
+            <p>
+                Напиши функцію <span>calcAverageCalories(days)</span>, яка
+                повертає середньодобове значення кількості калорій, які
+                спортсмен споживав протягом тижня. Функція очікує один параметр:
+                <span>days</span> — масив об’єктів. Кожен об’єкт описує день
+                тижня та кількість калорій <span>calories</span>, спожитих
+                спортсменом, у цей день. Візьми код нижче і встав після
+                оголошення своєї функції для перевірки коректності її роботи. У
+                консоль будуть виведені результати її викликів.
+            </p>
+            <code>
+                console.log( <br />
+                calcAverageCalories([<br />
+                <ul>
+                    <li>{ day: "monday", calories: 3010 },</li>
+                    <li>{ day: "tuesday", calories: 3200 },</li>
+                    <li>{ day: "wednesday", calories: 3120 },</li>
+                    <li>{ day: "thursday", calories: 2900 },</li>
+                    <li>{ day: "friday", calories: 3450 },</li>
+                    <li>{ day: "saturday", calories: 3280 },</li>
+                    <li>{ day: "sunday", calories: 3300 }</li>
+                </ul>
+                ]) <br />
+                ); // 3180 <br />
+                <br />
+
+                console.log( calcAverageCalories([ <br />
+                <ul>
+                    <li>{ day: "monday", calories: 2040 },</li>
+                    <li>{ day: "tuesday", calories: 2270 },</li>
+                    <li>{ day: "wednesday", calories: 2420 },</li>
+                    <li>{ day: "thursday", calories: 1900 },</li>
+                    <li>{ day: "friday", calories: 2370 },</li>
+                    <li>{ day: "saturday", calories: 2280 },</li>
+                    <li>{ day: "sunday", calories: 2610 }</li>
+                </ul>
+                ]) ); // 2270 <br />
+                <br />
+                console.log( calcAverageCalories([]) ); // 0
+            </code>
+        </section>
+
+        <section>
+            <h2>Задача 3. Профіль гравця</h2>
+            <p>
+                Об’єкт <span>profile</span> описує профіль користувача на
+                ігровій платформі. У його властивостях зберігається ім’я профілю
+                <span>username</span> та кількість активних годин
+                <span>playTime</span>, проведених у грі.
+            </p>
+
+            <p>const profile = { username: "Jacob", playTime: 300, };</p>
+
+            <p>
+                Доповни об’єкт <span>profile</span> методами для роботи з його
+                властивостями.
+            </p>
+
+            <ul>
+                <li>
+                    <p></p>
+                        Метод <span>changeUsername(newName)</span> повинен
+                        приймати рядок (нове ім’я) в параметр
+                        <span>newName</span> та змінювати значення властивості
+                        <span>username</span> на нове. Нічого не повертає.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Метод <span>updatePlayTime</span>(<span>hours</span>)
+                        повинен приймати число (кількість годин) у параметр
+                        hours та збільшити на нього значення властивості
+                        <span>playTime</span>. Нічого не повертає.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Метод <span>getInfo()</span> має повертати рядок формату
+                        "Username" <span>has</span> "amount"
+                        <span>active hours!</span>, де "Username" — це ім’я
+                        профілю, а "amount" — кількість ігрових годин.
+                    </p>
+                </li>
+            </ul>
+            <p>
+                Візьми код нижче і встав після оголошення своєї функції для
+                перевірки коректності її роботи. У консоль будуть виведені
+                результати її роботи.
+            </p>
+
+            <ol>
+                <li>
+                    <code
+                        >console.log(profile.getInfo()); // "Jacob has 300
+                        active hours!"
+                    </code>
+                </li>
+                <li>
+                    <code
+                        >profile.changeUsername("Marco");
+                        console.log(profile.getInfo()); // "Marco has 300 active
+                        hours!"</code
+                    >
+                </li>
+                <li>
+                    <code
+                        >profile.updatePlayTime(20);
+                        console.log(profile.getInfo()); // "Marco has 320 active
+                        hours!"</code
+                    >
+                </li>
+            </ol>
+        </section>
+
+        <script type="module" src="./js/task-1.js"></script>
+        <script type="module" src="./js/task-2.js"></script>
+        <script type="module" src="./js/task-3.js"></script>
+    </body>
+</html>
